@@ -26,7 +26,7 @@ bridesmaid finds a sealed envelope with her name on it.
 
 ## Stack
 
-React · Vite · TypeScript · TailwindCSS v4 · Framer Motion · GSAP · Lenis
+React · Vite · TypeScript · TailwindCSS v4 · Framer Motion · GSAP
 
 ## Run it
 
