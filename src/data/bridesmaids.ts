@@ -211,11 +211,9 @@ export const bridesmaids: Bridesmaid[] = [
       accent: "#edc59d",
       soft: "#fdf0e2",
     },
-    // No photos yet — placeholders render until files are added,
-    // e.g. { src: "/photos/leke-1.jpg", caption: "..." }
     photos: [
-      { caption: "Us, always" },
-      { caption: "Memories to be framed soon" },
+      { src: "/photos/leke-1.jpg", caption: "My jewel, glowing as always" },
+      { src: "/photos/leke-2.jpg", caption: "Extra, extra! Read all about it" },
     ],
     greeting: "My Lakes!",
     paragraphs: [
