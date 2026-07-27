@@ -76,6 +76,21 @@ body {
   }
 }
 
+/* Blinking typewriter caret on the breaking headline */
+@keyframes caret-blink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+.animate-caret {
+  animation: caret-blink 0.9s step-end infinite;
+}
+
 ::selection {
   background: #eecfae;
 }

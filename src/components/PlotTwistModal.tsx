@@ -1,23 +1,16 @@
-import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 interface PlotTwistModalProps {
+  /** Parent decides the moment — right as the typed headline finishes. */
+  show: boolean;
   onReveal: () => void;
-  hidden: boolean;
 }
 
-/** The classified-document popup that breaks the fourth wall. */
-export function PlotTwistModal({ onReveal, hidden }: PlotTwistModalProps) {
-  const [show, setShow] = useState(false);
-
-  useEffect(() => {
-    const t = setTimeout(() => setShow(true), 500);
-    return () => clearTimeout(t);
-  }, []);
-
+/** The classified-document popup that slams in and interrupts the story. */
+export function PlotTwistModal({ show, onReveal }: PlotTwistModalProps) {
   return (
     <AnimatePresence>
-      {show && !hidden && (
+      {show && (
         <motion.div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 backdrop-blur-[2px]"
           initial={{ opacity: 0 }}
@@ -32,10 +25,10 @@ export function PlotTwistModal({ onReveal, hidden }: PlotTwistModalProps) {
               background:
                 "linear-gradient(135deg, #f9c1ac 0%, #f8dfa8 30%, #f4e9ac 50%, #bcdfd2 72%, #d5c3e8 100%)",
             }}
-            initial={{ opacity: 0, scale: 0.7, y: 40 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 1.6, rotate: -2 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            transition={{ type: "spring", stiffness: 260, damping: 20 }}
+            transition={{ type: "spring", stiffness: 420, damping: 24 }}
           >
             {/* Classified-document corner brackets */}
             {[
