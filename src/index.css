@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Playfair Display Variable", "Playfair Display", Georgia,
+    serif;
+  --font-body: "EB Garamond Variable", "EB Garamond", Georgia, serif;
+
+  --color-cream: #faf3e4;
+  --color-ivory: #fdf8ef;
+  --color-ink: #26201a;
+  --color-terracotta: #b06a4a;
+  --color-gold: #b8894a;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Fine paper grain, applied as an ::after overlay */
+.grain {
+  position: relative;
+}
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: 0.28;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+}
+
+/* Wax seal shine sweep on envelope hover */
+.seal {
+  position: relative;
+  overflow: hidden;
+}
+.seal::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: linear-gradient(
+    115deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.75) 50%,
+    transparent 65%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.7s ease;
+}
+.group\/env:hover .seal::before {
+  transform: translateX(120%);
+}
+
+/* Newspaper column text */
+.np-columns {
+  column-count: 3;
+  column-gap: 2rem;
+  column-rule: 1px solid rgba(38, 32, 26, 0.15);
+  text-align: justify;
+  hyphens: auto;
+}
+@media (max-width: 768px) {
+  .np-columns {
+    column-count: 1;
+  }
+}
+
+::selection {
+  background: #eecfae;
+}
