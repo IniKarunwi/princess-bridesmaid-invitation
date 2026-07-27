@@ -167,7 +167,7 @@ export function LetterPage({ bridesmaid, onBack }: LetterPageProps) {
               animate={{ scale: 1, opacity: 1 }}
               transition={{ type: "spring", stiffness: 200, damping: 14 }}
             >
-              I'm so happy!! 🥹
+              Better for you!! 🥹
             </motion.p>
             <motion.p
               className="mt-6 font-body text-xl italic text-terracotta"
