@@ -72,8 +72,8 @@ export const bridesmaids: Bridesmaid[] = [
     groupLink: GROUP_LINK,
   },
   {
-    id: "zola",
-    name: "Zola",
+    id: "inimfon",
+    name: "Inimfon",
     colorTheme: {
       label: "Dusty Rose",
       body: "#f6ab9a",
@@ -83,16 +83,20 @@ export const bridesmaids: Bridesmaid[] = [
       soft: "#fdeae5",
     },
     photos: [
-      { caption: "Partners in crime since day one" },
-      { caption: "That night we never talk about" },
+      { src: "/photos/inimfon-1.jpg", caption: "All smiles, always" },
+      { src: "/photos/inimfon-2.jpg", caption: "Team Bride, obviously" },
+      { src: "/photos/inimfon-3.jpg", caption: "Super Eagles, super us" },
     ],
+    greeting: "Summers Day,",
     paragraphs: [
-      "It's actually happening — I'm getting MARRIED. And there was never a version of this day that didn't have you standing right beside me.",
-      "Road trips with terrible playlists, sleepovers that turned into therapy sessions, dancing until our feet gave up... you've been the co-author of my best stories.",
-      "You once talked us out of trouble using nothing but confidence and a fake accent. I need that exact energy at my wedding.",
+      "My dearest sister,",
+      "We've shared our lives with each other since JSS2. From that crazy form teacher (I still don't remember her name), to taking taxis together at ₦400, then ₦700 - how the times have changed - to dating brothers, to prom!",
+      "Inimfon, we've watched each other grow through tough times and easy ones, but you've stayed consistent through it all.",
+      "Thank you. Thank you for being a true friend. I never have to think twice about whether you love me or care for me. Thank you for being my safe space.",
+      "As I enter this new phase of my life, I cannot imagine doing it alone.",
     ],
-    ask: BRIDESMAID_ASK,
-    acceptLabel: BRIDESMAID_ACCEPT,
+    ask: "So just like I once asked if I could join your journey and follow the same taxi home, I'd like to ask now if you'd join my own journey, as one of my maids of honor?",
+    acceptLabel: "Yes! I'll Be Your Maid of Honor ❤️",
     groupLink: GROUP_LINK,
   },
   {
