@@ -13,7 +13,13 @@
     />
     <title>GreatmanTakit EXPOSED</title>
 
-    <!-- Social link previews (WhatsApp, iMessage, X, ...) -->
+    <!--
+      Social link previews (WhatsApp, iMessage, X, ...).
+      Preview crawlers don't run JavaScript, so the image has to be one
+      hard-coded absolute URL. It points at the permanent .vercel.app
+      deployment domain rather than the custom domain, so previews keep
+      working whichever domain a guest's link uses.
+    -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="GreatmanTakit EXPOSED" />
     <meta
@@ -22,7 +28,7 @@
     />
     <meta
       property="og:image"
-      content="https://www.greatmantakitexposed.xyz/og.jpg"
+      content="https://princess-bridesmaid-invitation.vercel.app/og.jpg"
     />
     <meta property="og:image:width" content="1536" />
     <meta property="og:image:height" content="1024" />
@@ -34,7 +40,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://www.greatmantakitexposed.xyz/og.jpg"
+      content="https://princess-bridesmaid-invitation.vercel.app/og.jpg"
     />
   </head>
   <body>
