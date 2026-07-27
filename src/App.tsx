@@ -13,7 +13,7 @@ export default function App() {
   const [phase, setPhase] = useState<Phase>("newspaper");
   const [selected, setSelected] = useState<Bridesmaid | null>(null);
 
-  // Personalised links: greatmantakitexposed.com/?for=amara
+  // Personalised links: greatmantakitexposed.xyz/?for=amara
   // When present, only that envelope will open — the rest politely refuse.
   const guestId = useMemo(() => {
     const id = new URLSearchParams(window.location.search)

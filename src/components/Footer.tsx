@@ -9,7 +9,7 @@ export function Footer() {
         }}
       >
         <p className="font-body text-sm italic text-ink/80">
-          greatmantakitexposed.com — A love letter disguised as breaking news.
+          greatmantakitexposed.xyz — A love letter disguised as breaking news.
           Made with ❤️ by Princess-Iman
         </p>
       </div>

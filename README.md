@@ -54,7 +54,7 @@ Everything lives in [`src/data/bridesmaids.ts`](src/data/bridesmaids.ts):
 Send each bridesmaid her own URL:
 
 ```
-https://greatmantakitexposed.com/?for=amara
+https://greatmantakitexposed.xyz/?for=amara
 ```
 
 With `?for=` set, only her envelope opens — clicking anyone else's makes it
@@ -63,5 +63,5 @@ envelope opens (handy for previewing).
 
 ---
 
-*greatmantakitexposed.com — A love letter disguised as breaking news.
+*greatmantakitexposed.xyz — A love letter disguised as breaking news.
 Made with ❤️ by Princess-Iman*
