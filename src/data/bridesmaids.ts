@@ -39,7 +39,6 @@ export interface Bridesmaid {
 /** Replace with the real WhatsApp invite link before sending this out! */
 const GROUP_LINK = "https://chat.whatsapp.com/REPLACE_ME";
 
-const BRIDESMAID_ASK = "WILL YOU BE MY BRIDESMAID ?";
 const BRIDESMAID_ACCEPT = "Yes! I'll Be Your Bridesmaid ❤️";
 
 export const bridesmaids: Bridesmaid[] = [
@@ -202,8 +201,8 @@ export const bridesmaids: Bridesmaid[] = [
     groupLink: GROUP_LINK,
   },
   {
-    id: "priya",
-    name: "Priya",
+    id: "leke",
+    name: "Leke",
     colorTheme: {
       label: "Seafoam Peach",
       body: "#f8d0ac",
@@ -212,16 +211,18 @@ export const bridesmaids: Bridesmaid[] = [
       accent: "#edc59d",
       soft: "#fdf0e2",
     },
+    // No photos yet — placeholders render until files are added,
+    // e.g. { src: "/photos/leke-1.jpg", caption: "..." }
     photos: [
-      { caption: "Softest friend, strongest heart" },
-      { caption: "Every adventure, better with you" },
+      { caption: "Us, always" },
+      { caption: "Memories to be framed soon" },
     ],
+    greeting: "My Lakes!",
     paragraphs: [
-      "I have news: I'm getting married!! And some moments in life are simply not allowed to happen without you — this is the biggest one yet.",
-      "Tea that turned into three-hour talks, trips we planned at 2am, the way you remember every little thing I've ever said... you make everything softer and brighter.",
-      "You cried at a phone commercial once, so I already know you're going to be a MESS at this wedding. Bring waterproof mascara.",
+      "We are practically sister-wives, but sisters nonetheless. You've been such a friend, such a sister, such a support system to me. I truly value you, my jewel.",
+      "You know me in the way only a real sister does - the version of me that isn't polished for anyone else, and you've loved that version anyway. That's not a small thing. That's everything.",
     ],
-    ask: BRIDESMAID_ASK,
+    ask: "As I enter into this new phase of my life, would you do me the honor of standing by my side - as my bridesmaid?",
     acceptLabel: BRIDESMAID_ACCEPT,
     groupLink: GROUP_LINK,
   },
