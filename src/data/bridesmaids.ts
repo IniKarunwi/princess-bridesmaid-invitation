@@ -152,8 +152,8 @@ export const bridesmaids: Bridesmaid[] = [
     groupLink: GROUP_LINK,
   },
   {
-    id: "noni",
-    name: "Noni",
+    id: "zotam",
+    name: "Zotam",
     colorTheme: {
       label: "Lavender",
       body: "#b085cd",
@@ -163,15 +163,15 @@ export const bridesmaids: Bridesmaid[] = [
       soft: "#f0e6f7",
     },
     photos: [
-      { caption: "Trouble, times two" },
-      { caption: "My favorite hype woman" },
+      { src: "/photos/zotam-1.jpg", caption: "A whole work of art" },
+      { src: "/photos/zotam-2.jpg", caption: "Standing tall, always" },
     ],
+    greeting: "My Chi.",
     paragraphs: [
-      "SURPRISE — I'm getting married! And the only thing missing from the picture in my head is you, in a beautiful dress, ugly-crying next to me.",
-      "Late-night calls, spontaneous plans, the way you show up before I even finish asking... you've made my whole life feel like a group project I actually enjoy.",
-      "You once hyped me up so hard before a date I nearly cancelled it to hang out with you instead. Honestly? Fair.",
+      "I bless the Lord time and again for the friendship we share. Your friendship is like honey to my soul — a bolster for me, a friendship that says I'm holding tight and I won't let you go. Thank you for being safety for me, and for finding me as safety for yourself.",
+      "We've laughed, cried, and insisted on God's word together. You, my sister, are a TRUE friend.",
     ],
-    ask: BRIDESMAID_ASK,
+    ask: "As I enter this new season, would you do me the honor of entering it with me, as my bridesmaid?",
     acceptLabel: BRIDESMAID_ACCEPT,
     groupLink: GROUP_LINK,
   },
