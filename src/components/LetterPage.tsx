@@ -32,8 +32,18 @@ function fireCelebration() {
 
 /** Act III — the letter itself, laid out like an editorial magazine spread. */
 export function LetterPage({ bridesmaid, onBack }: LetterPageProps) {
-  const { name, colorTheme, photos, heartfeltLetter, memories, funnyMoment, groupLink } =
-    bridesmaid;
+  const {
+    name,
+    colorTheme,
+    photos,
+    greeting,
+    paragraphs,
+    ask,
+    acceptLabel,
+    groupLink,
+  } = bridesmaid;
+  const leftPhotos = photos.filter((_, i) => i % 2 === 0);
+  const rightPhotos = photos.filter((_, i) => i % 2 === 1);
   const [accepted, setAccepted] = useState(false);
   const redirected = useRef(false);
 
@@ -67,28 +77,36 @@ export function LetterPage({ bridesmaid, onBack }: LetterPageProps) {
       </button>
 
       <div className="mx-auto grid w-full max-w-7xl items-center gap-10 lg:grid-cols-[1fr_1.25fr_1fr]">
-        <div className="order-2 flex justify-center lg:order-1">
-          <PhotoFrame photo={photos[0]} theme={colorTheme} delay={0.35} />
+        <div className="flex flex-col items-center gap-10">
+          {leftPhotos.map((p, i) => (
+            <PhotoFrame
+              key={i}
+              photo={p}
+              theme={colorTheme}
+              delay={0.35 + i * 0.15}
+              tilt={i % 2 ? 1.5 : -1.5}
+            />
+          ))}
         </div>
 
         {/* The letter — premium stationery unfolding into view */}
         <motion.div
-          className="grain order-1 rounded-lg border bg-ivory px-8 py-10 shadow-xl shadow-ink/10 md:px-12 lg:order-2"
+          className="grain rounded-lg border bg-ivory px-8 py-10 shadow-xl shadow-ink/10 md:px-12"
           style={{ borderColor: colorTheme.accent }}
           initial={{ opacity: 0, scaleY: 0.6, transformOrigin: "top" }}
           animate={{ opacity: 1, scaleY: 1 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
         >
           <h1 className="font-display text-5xl italic text-ink md:text-6xl">
-            {name},
+            {greeting ?? `${name},`}
           </h1>
 
           <div className="mt-8 space-y-6 font-body text-lg leading-relaxed text-ink/85">
-            <p>{heartfeltLetter}</p>
-            <p>{memories}</p>
-            <p>{funnyMoment}</p>
+            {paragraphs.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
             <p className="font-display text-xl font-bold italic tracking-wide text-ink">
-              WILL YOU BE MY BRIDESMAID ?
+              {ask}
             </p>
           </div>
 
@@ -110,15 +128,23 @@ export function LetterPage({ bridesmaid, onBack }: LetterPageProps) {
             whileHover={{ scale: 1.02, y: -2 }}
             whileTap={{ scale: 0.97 }}
           >
-            Yes! I'll Be Your Bridesmaid ❤️
+            {acceptLabel}
           </motion.button>
           <p className="mt-3 text-center font-body text-sm italic text-terracotta">
             Say yes &amp; connect with your fellow bridesmaids
           </p>
         </motion.div>
 
-        <div className="order-3 flex justify-center">
-          <PhotoFrame photo={photos[1]} theme={colorTheme} delay={0.5} />
+        <div className="flex flex-col items-center gap-10">
+          {rightPhotos.map((p, i) => (
+            <PhotoFrame
+              key={i}
+              photo={p}
+              theme={colorTheme}
+              delay={0.5 + i * 0.15}
+              tilt={i % 2 ? -1.5 : 1.5}
+            />
+          ))}
         </div>
       </div>
 

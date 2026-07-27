@@ -40,11 +40,14 @@ npm run build    # type-check + production build
 
 Everything lives in [`src/data/bridesmaids.ts`](src/data/bridesmaids.ts):
 
-- **Names, letters, memories, funny moments** — edit each entry.
+- **Letters** — each entry has a `greeting` (defaults to her name), a list
+  of `paragraphs`, the big `ask`, and an `acceptLabel` for the button, so
+  every letter can be completely her own (bridesmaid, maid of honor, ...).
 - **WhatsApp group** — replace `GROUP_LINK` with the real invite link.
 - **Photos** — drop images into `public/photos/` and set each photo's
-  `src` (e.g. `"/photos/amara-1.jpg"`). Until then, elegant colour-matched
-  placeholders render instead.
+  `src` (e.g. `"/photos/ellie-1.jpg"`). Each bridesmaid can have 1–4
+  photos, split across the two columns beside her letter. Until the files
+  exist, elegant colour-matched placeholders render instead.
 
 ### Personalised links
 

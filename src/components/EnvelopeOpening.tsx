@@ -49,7 +49,7 @@ export function EnvelopeOpening({ bridesmaid, onDone }: EnvelopeOpeningProps) {
         >
           <div className="p-6">
             <p className="font-display text-2xl italic text-ink/80">
-              {bridesmaid.name},
+              {bridesmaid.greeting ?? `${bridesmaid.name},`}
             </p>
             <div className="mt-4 space-y-2.5">
               {[...Array(5)].map((_, i) => (
