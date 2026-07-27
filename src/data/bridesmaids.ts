@@ -55,8 +55,8 @@ export const bridesmaids: Bridesmaid[] = [
     },
     photos: [
       { src: "/photos/ellie-1.jpg", caption: "Twins, in every sense" },
-      { src: "/photos/ellie-2.jpg", caption: "Disco balls & silly faces" },
-      { src: "/photos/ellie-3.jpg", caption: "Sunshine with my moonlight" },
+      { src: "/photos/ellie-2.jpg", caption: "Sunshine with my moonlight" },
+      { src: "/photos/ellie-3.jpg", caption: "Disco balls & silly faces" },
       { src: "/photos/ellie-4.jpg", caption: "Us, being us. Always." },
     ],
     greeting: "Kukuruku,",
