@@ -36,8 +36,8 @@ export interface Bridesmaid {
   groupLink: string;
 }
 
-/** Replace with the real WhatsApp invite link before sending this out! */
-const GROUP_LINK = "https://chat.whatsapp.com/REPLACE_ME";
+/** The bridal party WhatsApp group — where everyone lands after saying yes */
+const GROUP_LINK = "https://chat.whatsapp.com/IZ2kq4gZ1HOCDQRz5IiLam";
 
 const BRIDESMAID_ACCEPT = "Yes! I'll Be Your Bridesmaid ❤️";
 
