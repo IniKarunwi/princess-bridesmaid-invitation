@@ -1,6 +1,13 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { PlotTwistModal } from "./PlotTwistModal";
+
+const BREAKING_HEADLINE =
+  "BREAKING: Gospel Artist GreatmanTakit Finally Exposed...";
+/** The headline types itself over ~1.5s... */
+const TYPE_DURATION_MS = 1500;
+/** ...and the popup slams in right as the visitor leans in to read more. */
+const MODAL_DELAY_MS = TYPE_DURATION_MS + 350;
 
 const ARTICLE_PARAGRAPHS = [
   "Sources close to the gospel sensation confirmed late Tuesday that documents — dozens of them, possibly hundreds — exist. What the documents contain, no one will say. Where they are kept, no one will say. Whether they are, in fact, documents at all remains a matter of intense speculation among people who speculate intensely.",
@@ -24,6 +31,23 @@ export function Newspaper({ onRevealed }: NewspaperProps) {
   const stageRef = useRef<HTMLDivElement>(null);
   const [proposed, setProposed] = useState(false);
   const [folding, setFolding] = useState(false);
+  const [typedChars, setTypedChars] = useState(0);
+  const [modalReady, setModalReady] = useState(false);
+
+  // Live typewriter: the story is still being written when the popup interrupts it.
+  useEffect(() => {
+    const perChar = TYPE_DURATION_MS / BREAKING_HEADLINE.length;
+    const typer = setInterval(
+      () =>
+        setTypedChars((n) => Math.min(n + 1, BREAKING_HEADLINE.length)),
+      perChar,
+    );
+    const modal = setTimeout(() => setModalReady(true), MODAL_DELAY_MS);
+    return () => {
+      clearInterval(typer);
+      clearTimeout(modal);
+    };
+  }, []);
 
   const reveal = () => {
     if (folding || !stageRef.current) return;
@@ -78,6 +102,19 @@ export function Newspaper({ onRevealed }: NewspaperProps) {
             <span className="italic">"The Truth Will Shock You"</span>
             <span>Volume I · Issue I</span>
           </div>
+
+          {/* Live wire bulletin — the only crisp, readable line on the page */}
+          <p className="mt-5 min-h-[1.6em] font-body text-lg tracking-wide text-ink md:text-2xl">
+            <span className="font-bold text-[#a02c1d]">
+              {BREAKING_HEADLINE.slice(0, Math.min(typedChars, 9))}
+            </span>
+            <span className="font-semibold">
+              {BREAKING_HEADLINE.slice(9, typedChars)}
+            </span>
+            {!folding && (
+              <span className="ml-0.5 inline-block h-[1.05em] w-[2px] translate-y-[0.18em] animate-caret bg-ink" />
+            )}
+          </p>
         </header>
 
         {/* The article — heavily blurred, deliberately unreadable */}
@@ -143,7 +180,7 @@ export function Newspaper({ onRevealed }: NewspaperProps) {
         </p>
       </div>
 
-      <PlotTwistModal onReveal={reveal} hidden={folding} />
+      <PlotTwistModal show={modalReady && !folding} onReveal={reveal} />
     </div>
   );
 }
