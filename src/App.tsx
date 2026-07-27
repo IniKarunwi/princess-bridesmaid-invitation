@@ -6,12 +6,10 @@ import { LetterPage } from "./components/LetterPage";
 import { Petals } from "./components/Petals";
 import { Footer } from "./components/Footer";
 import { bridesmaids, type Bridesmaid } from "./data/bridesmaids";
-import { useLenis } from "./hooks/useLenis";
 
 type Phase = "newspaper" | "envelopes" | "letter";
 
 export default function App() {
-  useLenis();
   const [phase, setPhase] = useState<Phase>("newspaper");
   const [selected, setSelected] = useState<Bridesmaid | null>(null);
 
