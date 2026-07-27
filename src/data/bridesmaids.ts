@@ -100,8 +100,8 @@ export const bridesmaids: Bridesmaid[] = [
     groupLink: GROUP_LINK,
   },
   {
-    id: "kezia",
-    name: "Kezia",
+    id: "amimichi",
+    name: "Amimichi",
     colorTheme: {
       label: "Mustard",
       body: "#e3c33d",
@@ -111,15 +111,16 @@ export const bridesmaids: Bridesmaid[] = [
       soft: "#faf2d3",
     },
     photos: [
-      { caption: "Sunshine, both of us" },
-      { caption: "Laughing at nothing, as usual" },
+      { src: "/photos/amimichi-1.jpg", caption: "Golden hour, golden girl" },
+      { src: "/photos/amimichi-2.jpg", caption: "Cheers to us, always" },
     ],
+    greeting: "My Mimi.",
     paragraphs: [
-      "Guess who's getting married?! Me!! And I couldn't imagine walking into this new chapter without the person who's cheered me through every single one.",
-      "Study nights that became gossip nights, birthdays, breakdowns and breakthroughs... you have witnessed every version of me and loved them all.",
-      "You laughed so hard at my expense at brunch that a stranger joined in. Bring that laugh — my wedding needs it.",
+      "You came into my life at a point when I thought I had everything I needed…friends, sisters, all of it. You know how people say “I didn't know I was starving until I tasted you”? Well, that's my story. I didn't know the depths of sisterhood I hadn't tasted until I met you - a sister who would pray for me.",
+      "Your sisterhood is invaluable to me, Mimi. Invaluable.",
+      "As I enter this new season of my life, I would like nothing more than to enter it with you standing right by my side - in laughter, in swag and of course, in prayer.",
     ],
-    ask: BRIDESMAID_ASK,
+    ask: "Would you be my bridesmaid?",
     acceptLabel: BRIDESMAID_ACCEPT,
     groupLink: GROUP_LINK,
   },
